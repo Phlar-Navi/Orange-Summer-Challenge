@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annauire Orange</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header id="accueil">
+        <nav class="nav">
+            <div class="title">
+                <img src="logo.png" alt="logo" width="100" height="100">
+                <span class="name"> Annuaire Orange </span>
+            </div>
+            <div class="navbar">
+                <ul class="links">
+                    <li class="hideOnMobile"> <a href="#accueil"> Accueil </a> </li>
+                    <li class="hideOnMobile"> <a href="#ajouter"> Ajouter </a> </li>
+                    <li class="hideOnMobile"> <a href="#consulter"> Consulter </a> </li>
+                    <li class="hideOnMobile"> <a href="#"> A propos </a> </li>
+                    <li onclick=showSidebar() class="menu">
+                        <svg width="30" height="30" viewBox="0 0 100 80" fill="orangered">
+                            <rect width="100" height="10" />
+                            <rect y="30" width="100" height="10" />
+                            <rect y="60" width="100" height="10" />
+                        </svg>
+                    </li>
+                </ul>
+
+                <ul class="mobileLinks">
+                    <li onclick="hideSidebar()" class="close-icon">
+                        <svg width="100" height="35" viewBox="60 0 100 80" fill="orangered">
+                            <rect x="15" y="35" width="70" height="10" transform="rotate(45 50 40)" />
+                            <rect x="15" y="35" width="70" height="10" transform="rotate(-45 50 40)" />
+                        </svg>
+                    </li>
+                    <li> <a href="#accueil"> Accueil </a> </li>
+                    <li> <a href="#ajouter"> Ajouter </a> </li>
+                    <li> <a href="#consulter"> Consulter </a> </li>
+                    <li> <a href="#"> A propos </a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="formulaire-ajout" id="ajouter">
+            <div class="center-message" style="background-color: greenyellow;">
+                <div id="message" style="color: green; font-weight: bolder;"></div>
+            </div>
+            <h2>Formulaire d'ajout</h2>
+            <form id="formulaire">
+                <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" placeholder="Entrez votre nom ici" required>
+                </div>
+
+                <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" placeholder="Entrez votre prénom ici" required>
+                </div>
+
+                <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Entrez votre mail ici" required>
+                </div>
+
+                <div class="form-group">
+                <label for="poste">Poste</label>
+                <input type="text" id="poste" placeholder="Entrez l'intitulé du poste ici" required>
+                </div>
+
+                <div class="form-buttons">
+                <button type="submit" class="btn-submit">Ajouter</button>
+                <button type="reset" class="btn-reset">Recommencer</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="consulter" class="liste-employes">
+                <div class="center-message" style="background-color: greenyellow;">
+                    <div id="message_deux" style="color: green; font-weight: bolder;"></div>
+                </div>
+                <h2> Liste du personnel </h2>
+                <div class="table-conteneur">
+                    <table class="table-simple">
+                        <thead>
+                            <th> Nom </th>
+                            <th> Prénom </th>
+                            <th> Adresse email </th>
+                            <th> Poste </th>
+                            <th> Actions </th>
+                        </thead>
+                        <tbody id="listeEmployes">
+                        </tbody>
+                    </table>
+                    <div class="center-message">
+                        <div id="message-vide"></div>
+                    </div>
+                </div>
+        </section>
+
+        <div class="overlay">
+            <section class="modale">
+                <h2> Modifier </h2>
+                <form id="formulaire_mod">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom_mod" name="nom_mod">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom_mod" name="prenom_mod">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email_mod" name="email_mod">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poste">Poste</label>
+                        <input type="text" id="poste_mod" name="poste_mod">
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-submit">Modifier</button>
+                        <button type="reset" class="btn-reset">Recommencer</button>
+                    </div>
+                </form>
+                <button onclick="FermerModifier()" class="btn-reset" style="margin-top: 10px">Annuler</button>
+            </section>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
