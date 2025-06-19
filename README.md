@@ -1,4 +1,4 @@
-Nom et Prénom : SEFII MENOUKEU RALPH IVAN HANS
+Nom et Prénom : SEFFI MENOUKEU RALPH IVAN HANS
 
 Langage utilisé : HTML, CSS, JS
 
